@@ -1,0 +1,49 @@
+#accordion {
+  width: 50vmax;
+}
+
+#accordion > div > div {
+  padding: 0;
+  background-color: #ddd;
+}
+
+#accordion > div > h3 {
+  margin: 5px 0 0 0;
+}
+
+.sortable { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  width: auto;
+  overflow-y: hidden;
+}
+
+.sortable li {
+  background-color: #eee;
+  padding: 10px; 
+  font-size: 1rem; 
+}
+
+.sortable li:not(:last-child) {
+  margin: 0 0 5px 0; 
+}
+
+.draggable {
+  background-image: url(images/draggable.gif);
+  display: block;
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin: 1px 3px 0 0;
+  cursor: move;
+}
+
+.shadow {
+  box-shadow: 0px 0px 10px 5px #00000033; 
+}
+
+.ui-sortable-placeholder {
+  border: 2px dashed #f56600;
+  height: 15px;
+}
