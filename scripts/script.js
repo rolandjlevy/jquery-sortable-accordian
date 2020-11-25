@@ -10,6 +10,7 @@ $(function() {
     // axis: "y",
     items: "> div",
     handle: "h3",
+    revert: true,
     stop: function(e, ui) {
       var sectionList = $(this).sortable("toArray", {attribute: "data-section-id"});
       var sectionId = ui.item[0].dataset.sectionId;
@@ -35,7 +36,6 @@ $(function() {
       updateData({sectionId, itemId, itemList});
     }
   });
-  $(".sortable").disableSelection();
 
   function updateData(obj) {
     var data = JSON.stringify(obj, null, 2);
