@@ -1,6 +1,17 @@
+:root {
+  --item-colour: #f3f3f3;
+  --item-border-colour: #ddd;
+  --dashed-border-colour:#f56600;
+  --draggable-icon: url(images/draggable.gif);
+}
+
 body {
   margin: 20px;
 }
+
+/*************/
+/* Accordion */
+/*************/
 
 #accordion {
   width: 50vmax;
@@ -8,12 +19,16 @@ body {
 
 #accordion > div > div {
   padding: 0;
-  background-color: #ddd;
+  background-color: var(--item-border-colour);
 }
 
 #accordion > div > h3 {
   margin: 5px 0 0 0;
 }
+
+/************/
+/* Sortable */
+/************/
 
 .sortable { 
   list-style-type: none; 
@@ -24,17 +39,17 @@ body {
 }
 
 .sortable li {
-  background-color: #eee;
+  background-color: var(--item-colour);
   padding: 10px; 
   font-size: 1rem; 
 }
 
 .sortable li:not(:last-child) {
-  margin: 0 0 5px 0; 
+  margin: 0 0 1px 0; 
 }
 
 .draggable {
-  background-image: url(images/draggable.gif);
+  background-image: var(--draggable-icon);
   display: block;
   width: 18px;
   height: 18px;
@@ -48,6 +63,6 @@ body {
 }
 
 .ui-sortable-placeholder {
-  border: 2px dashed #f56600;
+  border: 2px dashed var(--dashed-border-colour);
   height: 15px;
 }

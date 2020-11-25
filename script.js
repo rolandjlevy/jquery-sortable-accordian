@@ -23,6 +23,7 @@ $(function() {
     axis: "y",
     items: "> li",
     handle: ".draggable",
+    opacity: 1,
     placeholder: "ui-sortable-placeholder",
     sort: function(event, ui){ ui.item.addClass("shadow"); },
     stop: function(event, ui){ ui.item.removeClass("shadow"); },
