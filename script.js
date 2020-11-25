@@ -7,31 +7,35 @@ $(function() {
     collapsible: true
   })
   .sortable({
-    axis: "y",
+    // axis: "y",
     items: "> div",
     handle: "h3",
     stop: function(e, ui) {
-      ui.item.children("h3").triggerHandler("focusout");
-      $(this).accordion("refresh");
       var sectionList = $(this).sortable("toArray", {attribute: "data-section-id"});
       var sectionId = ui.item[0].dataset.sectionId;
-      console.log({sectionList, sectionId});
+      var data = JSON.stringify({sectionId, sectionList}, null, 2);
+      $('.data').text(data);
+      ui.item.children("h3").triggerHandler("focusout");
+      $(this).accordion("refresh");
     }
   });
 
   $(".sortable").sortable({
-    axis: "y",
+    // axis: "y",
     items: "> li",
     handle: ".draggable",
+    revert: true,
     opacity: 1,
     placeholder: "ui-sortable-placeholder",
-    sort: function(event, ui){ ui.item.addClass("shadow"); },
-    stop: function(event, ui){ ui.item.removeClass("shadow"); },
+    sort: function(event, ui){ ui.item.addClass("selected"); },
+    stop: function(event, ui){ ui.item.removeClass("selected"); },
     update: function(e, ui) {
       var itemList = $(this).sortable("toArray", {attribute: "data-item-id"});
-      var listId = e.target.dataset.listId;
+      var sectionId = e.target.dataset.listId;
       var itemId = ui.item[0].dataset.itemId;
-      console.log({itemList, listId, itemId});
+      var data = JSON.stringify({sectionId, itemId, itemList}, null, 2);
+      $('.data').text(data);
+      console.log();
     }
   });
   $(".sortable").disableSelection();
