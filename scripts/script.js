@@ -13,8 +13,7 @@ $(function() {
     stop: function(e, ui) {
       var sectionList = $(this).sortable("toArray", {attribute: "data-section-id"});
       var sectionId = ui.item[0].dataset.sectionId;
-      var data = JSON.stringify({sectionId, sectionList}, null, 2);
-      $('.data').text(data);
+      updateData({sectionId, sectionList});
       ui.item.children("h3").triggerHandler("focusout");
       $(this).accordion("refresh");
     }
@@ -33,11 +32,14 @@ $(function() {
       var itemList = $(this).sortable("toArray", {attribute: "data-item-id"});
       var sectionId = e.target.dataset.listId;
       var itemId = ui.item[0].dataset.itemId;
-      var data = JSON.stringify({sectionId, itemId, itemList}, null, 2);
-      $('.data').text(data);
-      console.log();
+      updateData({sectionId, itemId, itemList});
     }
   });
   $(".sortable").disableSelection();
+
+  function updateData(obj) {
+    var data = JSON.stringify(obj, null, 2);
+    $('.data').text(data);
+  }
 
 });

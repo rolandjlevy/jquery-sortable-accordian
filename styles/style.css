@@ -6,13 +6,17 @@
   --placeholder-bg: #ffe8af;
   --ontrack-green: #8b960e;
   --ontrack-green-light: #99CD3D;
-  --ontrack-green-dark: #6a7400;
-  --draggable-icon: url(images/draggable.gif);
+  --ontrack-green-dark: #616900;
+  --draggable-icon: url(../images/draggable.gif);
 }
 
 body {
-  margin: 20px;
+  margin: 40px;
   font-family: Arial,Helvetica,sans-serif;
+}
+
+.m-b-10 {
+  margin: 0 0 10px 0;
 }
 
 /*************/
@@ -50,7 +54,7 @@ body {
 /* Sortable */
 /************/
 
-.sortable { 
+ul.sortable { 
   list-style-type: none; 
   margin: 0; 
   padding: 0; 
@@ -58,19 +62,19 @@ body {
   overflow-y: hidden;
 }
 
-.sortable li {
+ul.sortable li {
   background-color: var(--item-bg);
   padding: 10px 10px 10px 15px; 
   font-size: 1rem;
   transition: background-color 0.15s ease;
 }
 
-.sortable li:hover {
+ul.sortable li:hover {
   background-color: var(--item-bg-hover);
   transition: background-color 0.15s ease;
 }
 
-.sortable li:not(:last-child) {
+ul.sortable li:not(:last-child) {
   margin: 0 0 1px 0; 
 }
 
@@ -85,7 +89,8 @@ body {
 }
 
 .selected {
-  box-shadow: 0px 0px 10px 5px #00000033;
+  border: 1px solid var(--item-border);
+  /* box-shadow: 0px 0px 5px 2px #00000033; */
 }
 
 .ui-sortable-placeholder {
@@ -94,36 +99,6 @@ body {
   height: 15px;
 }
 
-/*************/
-/* View data */
-/*************/
-
-.wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.display {
-  width: 50vmax;
-  max-width: 600px;
-  height: auto;
-  margin: 5px 0 0 20px
-}
-
-details > summary {
-  cursor: pointer;
-  outline: none;
-}
-
-.data {
-  border: 1px solid #ccc;
-  min-height: 20px;
-  width: calc(100% - 10px);
-  display: block; 
-  clear: both; 
-  float: left;
-  margin: 10px 0 10px 0;
-  padding: 5px;
-  font-size: 1.125rem;
+.ui-widget-content {
+  border: 1px solid var(--item-border) !important;
 }
