@@ -50,9 +50,9 @@ body {
   transition: all 0.15s ease;
 }
 
-/************/
-/* Sortable */
-/************/
+/*********/
+/* Items */
+/*********/
 
 ul.sortable { 
   list-style-type: none; 
@@ -96,7 +96,7 @@ ul.sortable li:not(:last-child) {
 .ui-sortable-placeholder {
   border: 2px dashed var(--placeholder-border);
   background-color: var(--placeholder-bg) !important;
-  height: 15px;
+  height: 16px;
 }
 
 .ui-widget-content {
