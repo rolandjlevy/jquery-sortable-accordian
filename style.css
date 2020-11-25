@@ -40,7 +40,7 @@ body {
 
 .sortable li {
   background-color: var(--item-colour);
-  padding: 10px; 
+  padding: 10px 10px 10px 15px; 
   font-size: 1rem; 
 }
 
@@ -54,7 +54,7 @@ body {
   width: 18px;
   height: 18px;
   float: left;
-  margin: 1px 3px 0 0;
+  margin: 1px 5px 0 0;
   cursor: move;
 }
 
