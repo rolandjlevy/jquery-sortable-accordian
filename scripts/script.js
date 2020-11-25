@@ -10,7 +10,7 @@ $(function() {
     // axis: "y",
     items: "> div",
     handle: "h3",
-    revert: true,
+    revert: false,
     stop: function(e, ui) {
       var sectionList = $(this).sortable("toArray", {attribute: "data-section-id"});
       var sectionId = ui.item[0].dataset.sectionId;
