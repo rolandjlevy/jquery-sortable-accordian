@@ -39,7 +39,6 @@ details > summary {
   }
   .display {
     margin: 30px 0 0 0;
-    /* width: calc(100vmax - 2 * var(--body-padding)); */
     width: 100%;
   }
 }

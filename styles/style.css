@@ -4,7 +4,7 @@
   --item-border: #ccc;
   --placeholder-border:#c1780e;
   --placeholder-bg: #ffe8af;
-  --ontrack-green: #8b960e;
+  --ontrack-green: #bfc0b7;
   --ontrack-green-light: #99CD3D;
   --ontrack-green-dark: #616900;
   --draggable-icon: url(../images/draggable.gif);
@@ -58,7 +58,6 @@ body {
 
 @media only screen and (max-width: 640px) {
   #accordion {
-    /* width: calc(100vmax - 2 * var(--body-padding)); */
     width: 100%;
   }
 }
