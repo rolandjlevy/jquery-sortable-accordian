@@ -8,11 +8,17 @@
   --ontrack-green-light: #99CD3D;
   --ontrack-green-dark: #616900;
   --draggable-icon: url(../images/draggable.gif);
+  --body-padding: 40px;
 }
 
 body {
-  margin: 40px;
-  font-family: Arial,Helvetica,sans-serif;
+  margin: 0;
+  padding: var(--body-padding);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.m-b-5 {
+  margin: 0 0 5px 0;
 }
 
 .m-b-10 {
@@ -24,7 +30,7 @@ body {
 /*************/
 
 #accordion {
-  width: 50vmax;
+  width: calc(50vmax - 2 * var(--body-padding));
   max-width: 600px;
   float: left;
 }
@@ -48,6 +54,13 @@ body {
 #accordion > div > h3[aria-selected=false] {
   color: #454545 !important;
   transition: all 0.15s ease;
+}
+
+@media only screen and (max-width: 640px) {
+  #accordion {
+    /* width: calc(100vmax - 2 * var(--body-padding)); */
+    width: 100%;
+  }
 }
 
 /*********/
