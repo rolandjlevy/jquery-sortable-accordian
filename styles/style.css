@@ -31,7 +31,7 @@ body {
 
 #accordion {
   width: calc(50vmax - 2 * var(--body-padding));
-  max-width: 600px;
+  max-width: 400px;
   float: left;
 }
 

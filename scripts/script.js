@@ -31,10 +31,10 @@ $(function() {
     sort: function(event, ui){ ui.item.addClass("selected"); },
     stop: function(event, ui){ ui.item.removeClass("selected"); },
     update: function(e, ui) {
-      var itemList = $(this).sortable("toArray", {attribute: "data-item-id"});
+      var questionList = $(this).sortable("toArray", {attribute: "data-item-id"});
       var sectionId = e.target.dataset.listId;
-      var itemId = ui.item[0].dataset.itemId;
-      updateData({sectionId, itemId, itemList});
+      var questionId = ui.item[0].dataset.itemId;
+      updateData({sectionId, questionId, questionList});
     }
   });
 
