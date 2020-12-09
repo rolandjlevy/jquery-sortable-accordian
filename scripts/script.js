@@ -24,7 +24,6 @@ $(function() {
     handle: ".draggable",
     revert: true,
     revertDuration: 50,
-    opacity: 1,
     placeholder: "ui-sortable-placeholder",
     sort: function(event, ui){ ui.item.addClass("selected"); },
     stop: function(event, ui){ ui.item.removeClass("selected"); },
