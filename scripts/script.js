@@ -5,15 +5,14 @@ $(function() {
     event: "click",
     active: false,
     collapsible: true
-  })
-  .sortable({
-    // axis: "y",
+  }).sortable({
     items: "> div",
     handle: "h3",
     revert: false,
     stop: function(e, ui) {
-      var sectionList = $(this).sortable("toArray", {attribute: "data-section-id"});
-      var sectionId = ui.item[0].dataset.sectionId;
+      var sectionList = $(this).sortable("toArray", { attribute: "data-section-id" });
+      var sectionId = ui.item.context.dataset.sectionId;
+      var index = ui.item.index();
       updateData({sectionId, sectionList});
       ui.item.children("h3").triggerHandler("focusout");
       $(this).accordion("refresh");
@@ -21,7 +20,6 @@ $(function() {
   });
 
   $(".sortable").sortable({
-    // axis: "y",
     items: "> li",
     handle: ".draggable",
     revert: true,
@@ -31,9 +29,10 @@ $(function() {
     sort: function(event, ui){ ui.item.addClass("selected"); },
     stop: function(event, ui){ ui.item.removeClass("selected"); },
     update: function(e, ui) {
-      var questionList = $(this).sortable("toArray", {attribute: "data-item-id"});
+      var questionList = $(this).sortable("toArray", { attribute: "data-item-id" });
       var sectionId = e.target.dataset.listId;
-      var questionId = ui.item[0].dataset.itemId;
+      var questionId = ui.item.context.dataset.itemId;
+      var index = ui.item.index();
       updateData({sectionId, questionId, questionList});
     }
   });
