@@ -1,5 +1,5 @@
 $(function() {
-  
+  // Comment
   $("#accordion").accordion({
     header: "> div > h3",
     event: "click",
@@ -22,7 +22,7 @@ $(function() {
   $(".sortable").sortable({
     items: "> li",
     handle: ".draggable",
-    revert: true,
+    revert: false,
     revertDuration: 50,
     placeholder: "ui-sortable-placeholder",
     sort: function(event, ui){ ui.item.addClass("selected"); },
@@ -40,5 +40,15 @@ $(function() {
     var data = JSON.stringify(obj, null, 2);
     $('.data').text(data);
   }
+
+  $("#sortable-right").sortable({
+    items: "> li",
+    handle: ".draggable",
+    revert: false,
+    revertDuration: 50,
+    helper: "clone",
+    placeholder: "ui-sortable-placeholder",
+    connectWith: ".connectedSortable"
+  });
 
 });
